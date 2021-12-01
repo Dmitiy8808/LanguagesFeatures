@@ -11,9 +11,11 @@ namespace LanguagesFeatures.Contrillers
             List<string> results = new List<string>();
             foreach (Product p in Product.GetProducts())
             {
-                string name = p?.Name;
-                decimal? price = p?.Price;
-                results.Add($"Name: {name}, Price: {price}");
+                string name = p?.Name ?? "<Noname>";
+                decimal? price = p?.Price ?? 0;
+                string relatedName = p?.Related?.Name ?? "<None>";
+                string category = p?.Category ?? "<No category>";
+                results.Add($"Name: {name}, Price: {price}, Related: {relatedName}, Category: {category}");
             }
             return View(results);
         }
