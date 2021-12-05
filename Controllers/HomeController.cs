@@ -16,7 +16,8 @@ namespace LanguagesFeatures.Contrillers
                 new Product {Name = "Corner flag", Price = 34.95M}
             };
 
-            decimal priceFilterTotal = productArray.Fil
+            decimal priceFilterTotal = productArray.FilterByPrice(20).TotalPrices();
+            
 
             return View("Index");
               
