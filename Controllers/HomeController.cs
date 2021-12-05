@@ -9,9 +9,31 @@ namespace LanguagesFeatures.Contrillers
         public ViewResult Index()
         {   
 
-            ShoppingCart cart = new ShoppingCart {Products = Product.GetProducts() };
-            decimal cartTotal = cart.TotalPrices();
-            return View ("Index", cartTotal);
+          Product [] productArray = {
+                new Product {Name = "Kayak", Price = 275M},
+                new Product {Name = "Lifejacket", Price = 48.95M}, 
+                new Product {Name = "Soccer ball", Price = 19.50M},
+                new Product {Name = "Corner flag", Price = 34.95M}
+            };
+
+            decimal priceFilterTotal = productArray.Fil
+
+            return View("Index");
+              
+            // ShoppingCart cart = new ShoppingCart {Products = Product.GetProducts()};
+            // Product [] productArray = {
+            //     new Product {Name = "Kayak", Price = 275M},
+            //     new Product {Name = "Lifejacket", Price = 48.95M}
+            // };
+            // decimal cartTotal = cart.TotalPrices();
+            // decimal arrayTotal = productArray.TotalPrices();
+            // decimal filterCart = cart.FilterByPrice(20M).TotalPrices();
+            // return View("Index", new string[]{$"FilterCartType: {filterCart}"});
+
+
+            // ShoppingCart cart = new ShoppingCart {Products = Product.GetProducts() };
+            // decimal cartTotal = cart.TotalPrices();
+            // return View ("Index", cartTotal);
         //     List<string> results = new List<string>();
         //     foreach (Product p in Product.GetProducts())
         //     {
